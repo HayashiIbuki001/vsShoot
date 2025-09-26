@@ -536,6 +536,9 @@ MonoBehaviour:
   bulletObj: {fileID: 8599019834478991146, guid: 13cec5574a507e04a912e20fd9a63f6a, type: 3}
   firePoint: {fileID: 1914007471}
   shootKey: 115
+  maxAmmo: 10
+  regenTime: 2
+  coolTime: 1
 --- !u!1 &861984664
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +766,9 @@ MonoBehaviour:
   bulletObj: {fileID: 8599019834478991146, guid: 13cec5574a507e04a912e20fd9a63f6a, type: 3}
   firePoint: {fileID: 861984665}
   shootKey: 274
+  maxAmmo: 10
+  regenTime: 2
+  coolTime: 1
 --- !u!1 &1914007470
 GameObject:
   m_ObjectHideFlags: 0
