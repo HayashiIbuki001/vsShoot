@@ -1,8 +1,11 @@
 using UnityEngine;
 
-public class PlayerMove2P : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 0.01f;
+
+    public KeyCode moveLeft;
+    public KeyCode moveRight;
 
     float move = 0;
 
@@ -13,11 +16,11 @@ public class PlayerMove2P : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(moveLeft))
         {
             move = -1;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(moveRight))
         {
             move = 1;
         }
