@@ -1,5 +1,5 @@
-using System.Threading;
 using UnityEngine;
+using TMPro;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -17,6 +17,9 @@ public class PlayerShoot : MonoBehaviour
     private int ammo = 0;
     private float regenTimer = 0;
     private float shootTimer = 0;
+
+    [Header("UI")]
+    public TextMeshProUGUI ammoText;
 
 
     private void Update()
@@ -42,7 +45,8 @@ public class PlayerShoot : MonoBehaviour
 
                     ammo--;
                     shootTimer = 0;
-                    Debug.Log($"残り弾数：{ammo}発");
+                    ammoText.text = ammo.ToString();
+                    //Debug.Log($"残り弾数：{ammo}発");
                 }
             }
         }
@@ -58,7 +62,9 @@ public class PlayerShoot : MonoBehaviour
             {
                 ammo++;
                 regenTimer = 0;
-                Debug.Log($"弾数を回復：{ammo}発");
+
+                ammoText.text = ammo.ToString();
+                //Debug.Log($"弾数を回復：{ammo}発");
             }
         }
     }
