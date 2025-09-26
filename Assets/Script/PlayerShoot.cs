@@ -39,8 +39,11 @@ public class PlayerShoot : MonoBehaviour
             {
                 if (shootTimer >= coolTime)
                 {
-                    GameObject bullet = Instantiate(bulletObj, firePoint.position, firePoint.rotation);
-                    Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                    GameObject bulletInstance = Instantiate(bulletObj, firePoint.position, firePoint.rotation);
+                    Bullet bullet = bulletInstance.GetComponent<Bullet>();
+                    bullet.shooter = this.gameObject;
+
+                    Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
                     rb.linearVelocity = firePoint.up * bulletSpeed;
 
                     ammo--;
